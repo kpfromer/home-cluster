@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cluster-settings
+  namespace: flux-system
+data:
+  METALLB_LB_RANGE: 192.168.50.160-192.168.50.170
+  INGRESS_NGINX_LB: 192.168.50.160
