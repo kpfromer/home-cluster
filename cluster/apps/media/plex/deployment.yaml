@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plex
+  namespace: media
+  labels:
+    app: plex
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: plex
+  template:
+    metadata:
+      labels:
+        app: plex
+    spec:
+      serviceAccountName: default
+      dnsPolicy: ClusterFirst
+      enableServiceLinks: true
+      containers:
+        - name: plex
+          image: "ghcr.io/k8s-at-home/plex:latest"
+          imagePullPolicy: IfNotPresent
+          env:
+            - name: "TZ"
+              value: "America/Denver"
+          ports:
+            # TODO: create load balanced service in the future
+            - name: http
+              containerPort: 32400
+              protocol: TCP
+          volumeMounts:
+            # TODO: in memory volume for transcode
+            - mountPath: /config
+              subPath: config
+              name: plex-nas
+              readOnly: false
+            - mountPath: /media
+              subPath: media
+              name: plex-nas
+              readOnly: true
+            - mountPath: /transcode
+              name: plex-transcode
+          livenessProbe:
+            tcpSocket:
+              port: 32400
+            initialDelaySeconds: 0
+            failureThreshold: 3
+            timeoutSeconds: 1
+            periodSeconds: 10
+          readinessProbe:
+            tcpSocket:
+              port: 32400
+            initialDelaySeconds: 0
+            failureThreshold: 3
+            timeoutSeconds: 1
+            periodSeconds: 10
+          startupProbe:
+            tcpSocket:
+              port: 32400
+            initialDelaySeconds: 0
+            failureThreshold: 30
+            timeoutSeconds: 1
+            periodSeconds: 5
+      volumes:
+        - name: plex-nas
+          nfs:
+            path: /mnt/kpfromer-22TB-Z2/services/plex
+            readOnly: false
+            server: 192.168.50.105
+        - name: plex-transcode
+          emptyDir:
+            medium: Memory
