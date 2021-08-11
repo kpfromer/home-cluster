@@ -17,3 +17,6 @@ spec:
                 name: plex
                 port:
                   number: 32400
+        tls:
+          - hosts:
+              - "plex.${SECRET_DOMAIN}"
