@@ -9,6 +9,6 @@ spec:
   selector:
     app: plex
   ports:
-  - port: 80
-    name: http
-    targetPort: 32400
+    - port: 32400
+      name: http
+      targetPort: 32400
