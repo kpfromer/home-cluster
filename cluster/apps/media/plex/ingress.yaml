@@ -21,5 +21,6 @@ spec:
                 port:
                   number: 80
   tls:
-    - hosts:
+    - secretName: tls.plex
+      hosts:
         - "plex.${SECRET_DOMAIN}"
