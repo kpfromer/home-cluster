@@ -5,7 +5,8 @@ metadata:
   name: plex
   namespace: media
   annotations:
-    kubernetes.io/ingress.class: "traefik"
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
 spec:
   rules:
     - host: "plex.${SECRET_DOMAIN}"
@@ -18,9 +19,6 @@ spec:
                 name: plex
                 port:
                   number: 80
-        # tls:
-        #   - hosts:
-        #       - "plex.${SECRET_DOMAIN}"
   tls:
     - hosts:
         - "plex.${SECRET_DOMAIN}"
