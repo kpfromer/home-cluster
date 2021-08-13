@@ -49,7 +49,7 @@ spec:
 
     ingressRoute:
       dashboard:
-        # enabled: true
+        enabled: false # TODO: change to true
 
     additionalArguments:
       - "--api.insecure=true"
