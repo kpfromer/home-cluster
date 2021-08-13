@@ -4,8 +4,9 @@ kind: Ingress
 metadata:
   name: plex
   namespace: media
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
 spec:
-  ingressClassName: nginx
   rules:
     - host: "plex.${SECRET_DOMAIN}"
       http:
@@ -20,3 +21,6 @@ spec:
         # tls:
         #   - hosts:
         #       - "plex.${SECRET_DOMAIN}"
+  tls:
+    - hosts:
+        - "plex.${SECRET_DOMAIN}"
