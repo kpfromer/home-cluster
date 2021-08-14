@@ -76,6 +76,12 @@ spec:
       #   expose: true
       #   exposedPort: 8082
 
+    tlsOptions:
+      default:
+        minVersion: VersionTLS12
+        maxVersion: VersionTLS13
+        sniStrict: true
+
     resources:
       requests:
         memory: 100Mi
