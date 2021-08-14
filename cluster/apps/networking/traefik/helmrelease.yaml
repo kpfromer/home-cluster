@@ -51,12 +51,14 @@ spec:
       dashboard:
         enabled: false # TODO: change to true
 
-    additionalArguments:
+    globalArguments:
       - "--api.insecure=true"
       - "--serversTransport.insecureSkipVerify=true"
       - "--providers.kubernetesingress.ingressclass=traefik"
       # - "--metrics.prometheus=true"
       # - "--metrics.prometheus.entryPoint=metrics"
+    additionalArguments:
+      - "--providers.kubernetesingress.ingressendpoint.ip=${LB_TRAEFIK}"
 
     # metrics:
     #   prometheus:
