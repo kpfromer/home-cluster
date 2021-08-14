@@ -58,7 +58,7 @@ spec:
       # - "--metrics.prometheus=true"
       # - "--metrics.prometheus.entryPoint=metrics"
     additionalArguments:
-      - "--providers.kubernetesingress.ingressendpoint.ip=${LB_TRAEFIK}"
+      - "--providers.kubernetesingress.ingressendpoint.ip=${INGRESS_NGINX_LB}"
 
     # metrics:
     #   prometheus:
