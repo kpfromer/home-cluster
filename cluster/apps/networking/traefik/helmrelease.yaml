@@ -53,7 +53,7 @@ spec:
 
     additionalArguments:
       - "--api.insecure=true"
-      - "--serverstransport.insecureskipverify=true"
+      - "--serversTransport.insecureSkipVerify=true"
       - "--providers.kubernetesingress.ingressclass=traefik"
       # - "--metrics.prometheus=true"
       # - "--metrics.prometheus.entryPoint=metrics"
