@@ -68,8 +68,8 @@ spec:
     ports:
       traefik:
         expose: true
-      web:
-        redirectTo: websecure
+      # web:
+      #   redirectTo: websecure
       websecure:
         enabled: true
         options: "default"
