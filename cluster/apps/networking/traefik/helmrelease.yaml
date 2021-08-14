@@ -46,6 +46,7 @@ spec:
     ingressClass:
       enabled: true
       isDefaultClass: true
+      fallbackApiVersion: v1
 
     ingressRoute:
       dashboard:
@@ -68,11 +69,12 @@ spec:
     ports:
       traefik:
         expose: true
-      # web:
-      #   redirectTo: websecure
+      web:
+        redirectTo: websecure
       websecure:
-        enabled: true
-        options: "default"
+        tls:
+          enabled: true
+          options: "default"
       metrics:
         port: 8082
         expose: true
