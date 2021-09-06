@@ -28,7 +28,7 @@ spec:
         matchNames:
           - home
           - media
-      name: "devin"
+      name: "kyle"
       customApps:
         # - name: Valetudo
         #   url: "http://192.168.1.28"
@@ -119,6 +119,11 @@ spec:
         tls:
           - hosts:
               - "hajimari.${SECRET_DOMAIN}"
+    persistence:
+      data:
+        enabled: true
+        accessMode: ReadWriteOnce
+        size: 1Gi
     # persistence:
     #   data:
     #     enabled: true
