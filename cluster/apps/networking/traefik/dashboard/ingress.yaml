@@ -8,7 +8,9 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
 spec:
   tls:
-    - secretName: "${SECRET_DOMAIN/./-}-tls"
+    - secretName: "tls.traefik-dashboard"
+      hosts:
+        - "traefik.${SECRET_DOMAIN}"
   rules:
     - host: traefik.${SECRET_DOMAIN}
       http:
