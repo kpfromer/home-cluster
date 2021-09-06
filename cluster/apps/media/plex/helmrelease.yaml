@@ -57,7 +57,7 @@ spec:
         volumeSpec:
           nfs:
             server: 192.168.0.55
-            path: /mnt/kpfromer-22TB-Z2/Plex
+            path: /mnt/kpfromer-22TB-Z2/Plex/Movies
           # nfs:
           #   server: 192.168.0.55
           #   path: /mnt/kpfromer-22TB-Z2/services/plex/media
