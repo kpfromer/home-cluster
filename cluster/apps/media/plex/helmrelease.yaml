@@ -30,6 +30,8 @@ spec:
           kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           cert-manager.io/cluster-issuer: letsencrypt-production
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "plex"
         hosts:
           - host: "plex.${SECRET_DOMAIN}"
             paths:
