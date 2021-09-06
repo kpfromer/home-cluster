@@ -28,7 +28,7 @@ spec:
         matchNames:
           - home
           - media
-      name: "Kyle"
+      name: "kyle"
       customApps:
         # - name: Valetudo
         #   url: "http://192.168.1.28"
@@ -122,8 +122,15 @@ spec:
     persistence:
       data:
         enabled: true
-        existingClaim: hajimari-config
-    resources:
-      requests:
-        cpu: 100m
-        memory: 128M
+        accessMode: ReadWriteOnce
+        size: 1Gi
+    # persistence:
+    #   data:
+    #     enabled: true
+    #     existingClaim: hajimari-config-v1
+    # podAnnotations:
+    #   configmap.reloader.stakater.com/reload: "hajimari-settings"
+    # resources:
+    #   requests:
+    #     cpu: 100m
+    #     memory: 128M
