@@ -56,11 +56,11 @@ spec:
         type: custom
         volumeSpec:
           nfs:
+            # server: 192.168.0.55
+            # path: /mnt/kpfromer-22TB-Z2/Plex
+            # nfs:
             server: 192.168.0.55
-            path: /mnt/kpfromer-22TB-Z2/Plex
-          # nfs:
-          #   server: 192.168.0.55
-          #   path: /mnt/kpfromer-22TB-Z2/services/plex/media
+            path: /mnt/kpfromer-22TB-Z2/services/plex/media
         mountPath: /media
         readOnly: true
       transcode:
