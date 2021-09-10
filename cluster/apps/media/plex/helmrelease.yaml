@@ -60,7 +60,7 @@ spec:
             path: /mnt/kpfromer-22TB-Z2/Plex
         mountPath: /media
         readOnly: true
-      otherMedia:
+      other-media:
         enabled: true
         type: custom
         volumeSpec:
