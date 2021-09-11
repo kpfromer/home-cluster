@@ -45,8 +45,10 @@ spec:
     persistence:
       config:
         enabled: true
+        type: pvc
         mountPath: /config
         existingClaim: plex-config
+        retain: true
         # enabled: true
         # type: custom
         # volumeSpec:
