@@ -52,7 +52,7 @@ spec:
         #   nfs:
         #     server: 192.168.0.55
         #     path: /mnt/kpfromer-22TB-Z2/services/plex/config
-        # mountPath: /config
+        mountPath: /config
       media:
         enabled: true
         type: custom
