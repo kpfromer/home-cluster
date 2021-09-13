@@ -73,6 +73,15 @@ spec:
             path: /mnt/kpfromer-22TB-Z2/services/plex/media
         mountPath: /other-media
         readOnly: true
+      other-media-two:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: 192.168.0.55
+            path: /mnt/kpfromer-22TB-Z2/kpfromer-encrypted/Stuff/Videos
+        mountPath: /other-media-two
+        readOnly: true
       transcode:
         enabled: true
         type: emptyDir
