@@ -417,14 +417,14 @@ Flux has a wide range of CLI options available be sure to run `flux --help` to v
 
 ### :robot:&nbsp; Automation
 
-- [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate) is a very useful tool that when configured will start to create PRs in your Github repository when Docker images, Helm charts or anything else that can be tracked has a newer version. The configuration for renovate is located [here](./.github/renovate.json5).
+- [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate) is a very useful tool that when configured will start to create PRs in your Github repository when Docker images, Helm charts or anything else that can be tracked has a newer version. The configuration for renovate is located [here](https://github.com/kpfromer/home-cluster/blob/main/.github/renovate.json5).
 
 - [system-upgrade-controller](https://github.com/rancher/system-upgrade-controller) will watch for new k3s releases and upgrade your nodes when new releases are found.
 
 There's also a couple Github workflows included in this repository that will help automate some processes.
 
-- [Flux upgrade schedule](./.github/workflows/flux-schedule.yaml) - workflow to upgrade Flux.
-- [Renovate schedule](./.github/workflows/renovate-schedule.yaml) - workflow to annotate `HelmRelease`'s which allows [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate) to track Helm chart versions.
+- [Flux upgrade schedule](https://github.com/kpfromer/home-cluster/blob/main/.github/workflows/flux-schedule.yaml) - workflow to upgrade Flux.
+- [Renovate schedule](https://github.com/kpfromer/home-cluster/blob/main/.github/workflows/renovate-schedule.yaml) - workflow to annotate `HelmRelease`'s which allows [Renovate](https://www.whitesourcesoftware.com/free-developer-tools/renovate) to track Helm chart versions.
 
 ## :grey_question:&nbsp; What's next
 
