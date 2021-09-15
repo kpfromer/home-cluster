@@ -44,21 +44,20 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
       /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
       ({
         navbar: {
-          title: "My Site",
+          title: "Home Cluster",
           logo: {
-            alt: "My Site Logo",
+            alt: "Docusaurus Dino",
             src: "img/logo.svg",
           },
           items: [
             {
               type: "doc",
-              docId: "intro",
+              docId: "services",
               position: "left",
-              label: "Tutorial",
+              label: "Docs",
             },
-            { to: "/blog", label: "Blog", position: "left" },
             {
-              href: "https://github.com/facebook/docusaurus",
+              href: "https://github.com/kpfromer/home-cluster",
               label: "GitHub",
               position: "right",
             },
@@ -68,46 +67,16 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
           style: "dark",
           links: [
             {
-              title: "Docs",
+              title: "Links",
               items: [
-                {
-                  label: "Tutorial",
-                  to: "/docs/intro",
-                },
-              ],
-            },
-            {
-              title: "Community",
-              items: [
-                {
-                  label: "Stack Overflow",
-                  href: "https://stackoverflow.com/questions/tagged/docusaurus",
-                },
-                {
-                  label: "Discord",
-                  href: "https://discordapp.com/invite/docusaurus",
-                },
-                {
-                  label: "Twitter",
-                  href: "https://twitter.com/docusaurus",
-                },
-              ],
-            },
-            {
-              title: "More",
-              items: [
-                {
-                  label: "Blog",
-                  to: "/blog",
-                },
                 {
                   label: "GitHub",
-                  href: "https://github.com/facebook/docusaurus",
+                  href: "https://github.com/kpfromer/home-cluster",
                 },
               ],
             },
           ],
-          copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+          copyright: `Copyright © ${new Date().getFullYear()} Kyle Pfromer. Built with Docusaurus.`,
         },
         prism: {
           theme: lightCodeTheme,
