@@ -20,9 +20,8 @@ spec:
       interval: 5m
   values:
     operatorNamespace: rook-ceph
-    # TODO: UPDATE TO TRUE
     toolbox:
-      enabled: false
+      enabled: true
     # TODO: UPDATE TO TRUE
     monitoring:
       enabled: false
