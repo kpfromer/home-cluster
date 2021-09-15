@@ -1,5 +1,5 @@
-# Pulled from https://github.com/paulkiernan/homelab-cluster/blob/62954ebe1c3f2af0063a6145f121a2939d0e7567/cluster/core/rook-ceph/ceph-cluster/helm-release.yaml
 ---
+# Pulled from https://github.com/paulkiernan/homelab-cluster/blob/62954ebe1c3f2af0063a6145f121a2939d0e7567/cluster/core/rook-ceph/ceph-cluster/helm-release.yaml
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
