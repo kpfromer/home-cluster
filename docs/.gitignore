@@ -1,19 +1,8 @@
-# Editors
-.vscode/
-# Trash
-.DS_Store
-Thumbs.db
-# k8s
-kubeconfig
-# vscode-sops
-.decrypted~*.yaml
-
-# docs
 # Dependencies
-docs/node_modules
+/node_modules
 
 # Production
-docs/build
+/build
 
 # Generated files
 .docusaurus
