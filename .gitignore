@@ -7,3 +7,23 @@ Thumbs.db
 kubeconfig
 # vscode-sops
 .decrypted~*.yaml
+
+# docs
+.vscode
+.idea
+*.iml
+*.code-workspace
+.changelog
+
+node_modules
+.yarn
+
+.eslintcache
+
+yarn-error.log
+build
+coverage
+.docusaurus
+.cache-loader
+
+.netlify
