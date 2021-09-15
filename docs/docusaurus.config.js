@@ -7,8 +7,8 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
   module.exports = {
     title: "Home Cluster",
     tagline: "Kyle Pfromer's home cluster.",
-    url: "https://kpfromer.github.io",
-    baseUrl: "/home-cluster/",
+    url: "https://home-cluster.vercel.app",
+    baseUrl: "/",
     projectName: "home-cluster",
     organizationName: "kpfromer",
     trailingSlash: false,
