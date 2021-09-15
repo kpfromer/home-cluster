@@ -8,3 +8,4 @@ resources:
   - k8s-at-home-charts.yaml
   - metallb-charts.yaml
   - traefik-charts.yaml
+  - rook-charts.yaml
