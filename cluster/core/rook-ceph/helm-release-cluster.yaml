@@ -1,0 +1,46 @@
+---
+# Pulled from https://github.com/paulkiernan/homelab-cluster/blob/62954ebe1c3f2af0063a6145f121a2939d0e7567/cluster/core/rook-ceph/ceph-cluster/helm-release.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: rook-ceph-cluster
+  namespace: rook-ceph
+spec:
+  interval: 5m
+  releaseName: rook-ceph
+  chart:
+    spec:
+      # renovate: registryUrl=https://charts.rook.io/release
+      chart: rook-ceph-cluster
+      version: v1.7.2
+      sourceRef:
+        kind: HelmRepository
+        name: rook-ceph-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    operatorNamespace: rook-ceph
+    # TODO: UPDATE TO TRUE
+    toolbox:
+      enabled: false
+    # TODO: UPDATE TO TRUE
+    monitoring:
+      enabled: false
+    storage:
+      # docs: https://rook.io/docs/rook/v1.7/ceph-cluster-crd.html
+      useAllNodes: false
+      useAllDevices: false
+      nodes:
+        - name: "titian01"
+          devices:
+            - name: "sdb"
+    # TODO: UPDATE TO TRUE
+    # ingress:
+    #   dashboard:
+    #     annotations:
+    #       kubernetes.io/ingress.class: nginx
+    #       nginx.ingress.kubernetes.io/server-snippet: |
+    #             proxy_ssl_verify off;
+    #     host:
+    #       name: "rook-ceph.${SECRET_DOMAIN}"
+    #       path: "/"
