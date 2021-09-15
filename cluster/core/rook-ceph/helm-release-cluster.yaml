@@ -34,13 +34,16 @@ spec:
         - name: "titian01"
           devices:
             - name: "sdb"
-    # TODO: UPDATE TO TRUE
-    # ingress:
-    #   dashboard:
-    #     annotations:
-    #       kubernetes.io/ingress.class: nginx
-    #       nginx.ingress.kubernetes.io/server-snippet: |
-    #             proxy_ssl_verify off;
-    #     host:
-    #       name: "rook-ceph.${SECRET_DOMAIN}"
-    #       path: "/"
+    ingress:
+      dashboard:
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          cert-manager.io/cluster-issuer: letsencrypt-production
+        host:
+          name: "rook-ceph.${SECRET_DOMAIN}"
+          path: "/"
+        tls:
+          - secretName: "tls.rook-ceph"
+            hosts:
+              - "rook-ceph.${SECRET_DOMAIN}"
