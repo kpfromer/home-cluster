@@ -7,7 +7,6 @@ metadata:
   namespace: rook-ceph
 spec:
   interval: 5m
-  releaseName: rook-ceph
   chart:
     spec:
       # renovate: registryUrl=https://charts.rook.io/release
