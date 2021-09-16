@@ -18,6 +18,9 @@ spec:
         name: rook-ceph-charts
         namespace: flux-system
       interval: 5m
+  dependsOn:
+    - name: rook-ceph-operator
+      namespace: rook-ceph
   values:
     operatorNamespace: rook-ceph
     toolbox:
