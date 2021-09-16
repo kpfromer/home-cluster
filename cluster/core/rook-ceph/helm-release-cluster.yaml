@@ -30,11 +30,11 @@ spec:
     storage:
       # docs: https://rook.io/docs/rook/v1.7/ceph-cluster-crd.html
       useAllNodes: false
-      useAllDevices: false
-      nodes:
-        - name: "titian01"
-          devices:
-            - name: "sdb"
+      useAllDevices: true
+      # nodes:
+      #   - name: "titian01"
+      #     devices:
+      #       - name: "sdb"
     ingress:
       dashboard:
         annotations:
