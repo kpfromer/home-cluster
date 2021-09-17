@@ -22,11 +22,19 @@ spec:
       namespace: rook-ceph
   values:
     operatorNamespace: rook-ceph
+
     toolbox:
       enabled: true
     # TODO: UPDATE TO TRUE
+
     monitoring:
       enabled: false
+
+    cephClusterSpec:
+      mon:
+        count: 3
+        allowMultiplePerNode: true
+
     storage:
       # docs: https://rook.io/docs/rook/v1.7/ceph-cluster-crd.html
       useAllNodes: false
