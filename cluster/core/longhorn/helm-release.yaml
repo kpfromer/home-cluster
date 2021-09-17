@@ -29,3 +29,14 @@ spec:
       provisionerReplicaCount: 1
       resizerReplicaCount: 1
       snapshotterReplicaCount: 1
+    ingress:
+      enabled: true
+      host: "longhorn.${SECRET_DOMAIN}"
+      tlsSecret: tls.longhorn
+      tls: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        hajimari.io/enable: "true"
+        hajimari.io/icon: "longhorn"
