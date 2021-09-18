@@ -43,7 +43,7 @@ spec:
         existingClaim: paperless-data
       media:
         enabled: true
-        existingClaim: paperless-data
+        existingClaim: paperless-media
       consume:
         enabled: true
         existingClaim: paperless-consume
