@@ -57,15 +57,8 @@ spec:
     persistence:
       data:
         enabled: true
-        accessMode: ReadWriteOnce
-        size: 1Gi
-    # persistence:
-    #   data:
-    #     enabled: true
-    #     existingClaim: hajimari-config-v1
-    # podAnnotations:
-    #   configmap.reloader.stakater.com/reload: "hajimari-settings"
-    # resources:
-    #   requests:
-    #     cpu: 100m
-    #     memory: 128M
+        existingClaim: monica-data
+    resources:
+      requests:
+        cpu: 100m
+        memory: 128M
