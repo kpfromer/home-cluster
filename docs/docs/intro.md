@@ -12,7 +12,7 @@ My cluster uses [k3s](https://k3s.io/) on Ubuntu 20.04. It used mixed hardware a
 
 ## Cluster Components
 
-- [rook-ceph](https://rook.io/): Provides persistent volumes, allowing any application to consume RBD block storage.
+- [longhorn](https://longhorn.io/): Provides persistent volumes, allowing any application to consume storage.
 - [Mozilla SOPS](https://toolkit.fluxcd.io/guides/mozilla-sops/): Encrypts secrets which is safe to store - even to a public repository.
 - [cert-manager](https://cert-manager.io/docs/): Configured to create TLS certs for all ingress services automatically using LetsEncrypt.
 

@@ -9,4 +9,3 @@ resources:
   - metallb-charts.yaml
   - traefik-charts.yaml
   - longhorn-charts.yaml
-  # rook-charts.yaml
