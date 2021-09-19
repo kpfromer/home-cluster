@@ -29,7 +29,7 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - secretName: tls.hajimari
+          - secretName: tls.syncthing
             hosts:
               - "syncthing.${SECRET_DOMAIN}"
     persistence:
