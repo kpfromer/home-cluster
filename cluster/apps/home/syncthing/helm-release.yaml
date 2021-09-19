@@ -31,7 +31,7 @@ spec:
         tls:
           - secretName: tls.syncthing
             hosts:
-              - "syncthing.${SECRET_DOMAIN}"
+              - "syncthing-test.${SECRET_DOMAIN}"
     persistence:
       data:
         enabled: true
