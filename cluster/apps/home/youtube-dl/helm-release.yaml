@@ -29,6 +29,8 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: "youtube"
           hajimari.io/appName: "youtube-dl"
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
         hosts:
           - host: "youtube-dl.${SECRET_DOMAIN}"
             paths:
