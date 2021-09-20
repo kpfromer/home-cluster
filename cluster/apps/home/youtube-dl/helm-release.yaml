@@ -40,23 +40,23 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: youtube-dl-data
+        existingClaim: youtube-dl
         subPath: config
       audio:
         enabled: true
-        existingClaim: youtube-dl-data
+        existingClaim: youtube-dl
         subPath: audio
       subscriptions:
         enabled: true
-        existingClaim: youtube-dl-data
+        existingClaim: youtube-dl
         subPath: subscriptions
       users:
         enabled: true
-        existingClaim: youtube-dl-data
+        existingClaim: youtube-dl
         subPath: users
       video:
         enabled: true
-        existingClaim: youtube-dl-data
+        existingClaim: youtube-dl
         subPath: video
     # resources:
     #   requests:
