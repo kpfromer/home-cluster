@@ -26,3 +26,7 @@ Longhorn handles:
 
 - creating storage for pvcs
 - backing up data to NFS on NAS (TrueNAS)
+
+### Issues
+
+If pods are running into mount issues with longhorn pvcs make sure that multipath is disabled ([read here](https://longhorn.io/kb/troubleshooting-volume-with-multipath/)) for **all** nodes.
