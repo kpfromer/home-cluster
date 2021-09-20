@@ -9,7 +9,7 @@ metadata:
     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
     cert-manager.io/cluster-issuer: letsencrypt-production
     hajimari.io/enable: "true"
-    hajimari.io/icon: "traefik"
+    hajimari.io/icon: "traffic-light"
 spec:
   tls:
     - secretName: "tls.traefik-dashboard"

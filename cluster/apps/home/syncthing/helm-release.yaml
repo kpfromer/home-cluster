@@ -26,7 +26,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
           cert-manager.io/cluster-issuer: letsencrypt-production
           hajimari.io/enable: "true"
-          hajimari.io/icon: "syncthing"
+          hajimari.io/icon: "graphql"
         hosts:
           - host: "syncthing.${SECRET_DOMAIN}"
             paths:
