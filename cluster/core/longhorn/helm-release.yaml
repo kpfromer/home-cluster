@@ -39,5 +39,4 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         cert-manager.io/cluster-issuer: letsencrypt-production
         hajimari.io/enable: "true"
-        hajimari.io/icon: "youtube"
-        hajimari.io/appName: "youtube-dl"
+        hajimari.io/icon: "cow"
