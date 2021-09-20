@@ -33,7 +33,7 @@ spec:
               - path: /
                 pathType: Prefix
         tls:
-          - secretName: tls.monica
+          - secretName: tls.youtubedl
             hosts:
               - "youtube-dl.${SECRET_DOMAIN}"
     persistence:
