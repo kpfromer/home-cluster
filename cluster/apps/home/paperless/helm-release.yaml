@@ -27,7 +27,7 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           cert-manager.io/cluster-issuer: letsencrypt-production
           hajimari.io/enable: "true"
-          hajimari.io/icon: "paperless"
+          hajimari.io/icon: "leaf"
         hosts:
           - host: "paperless.${SECRET_DOMAIN}"
             paths:
