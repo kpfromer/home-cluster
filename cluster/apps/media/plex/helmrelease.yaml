@@ -51,12 +51,6 @@ spec:
         mountPath: /config
         existingClaim: plex-config
         retain: true
-        # enabled: true
-        # type: custom
-        # volumeSpec:
-        #   nfs:
-        #     server: 192.168.0.55
-        #     path: /mnt/kpfromer-22TB-Z2/services/plex/config
       media:
         enabled: true
         type: custom
@@ -65,15 +59,6 @@ spec:
             server: 192.168.0.55
             path: /mnt/kpfromer-22TB-Z2/Plex
         mountPath: /media
-        readOnly: true
-      other-media:
-        enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: 192.168.0.55
-            path: /mnt/kpfromer-22TB-Z2/services/plex/media
-        mountPath: /other-media
         readOnly: true
       other-media-two:
         enabled: true
