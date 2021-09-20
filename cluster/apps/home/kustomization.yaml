@@ -6,3 +6,4 @@ resources:
   - mysql
   - paperless
   - syncthing
+  - youtube-dl
