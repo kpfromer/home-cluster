@@ -39,24 +39,19 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: youtube-dl
-        subPath: config
+        existingClaim: youtube-dl-config
       audio:
         enabled: true
-        existingClaim: youtube-dl
-        subPath: audio
+        existingClaim: youtube-dl-audio
       subscriptions:
         enabled: true
-        existingClaim: youtube-dl
-        subPath: subscriptions
+        existingClaim: youtube-dl-subscriptions
       users:
         enabled: true
-        existingClaim: youtube-dl
-        subPath: users
+        existingClaim: youtube-dl-users
       video:
         enabled: true
-        existingClaim: youtube-dl
-        subPath: video
+        existingClaim: youtube-dl-video
     # resources:
     #   requests:
     #     cpu: 100m
