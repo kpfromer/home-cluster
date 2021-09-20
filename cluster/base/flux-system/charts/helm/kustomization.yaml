@@ -9,3 +9,4 @@ resources:
   - metallb-charts.yaml
   - traefik-charts.yaml
   - longhorn-charts.yaml
+  - kubernetes-sigs-charts.yaml
