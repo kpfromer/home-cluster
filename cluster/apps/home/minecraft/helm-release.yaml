@@ -21,7 +21,7 @@ spec:
       eula: "TRUE"
       version: "1.16.5"
       type: "CURSEFORGE"
-      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-slice-of-pi2-atm-slop2/download/3452318/file"
+      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-slice-of-pi2-atm-slop2/download/3452307/file"
       ops: "kpfromer"
       maxPlayers: 10
       pvp: true
