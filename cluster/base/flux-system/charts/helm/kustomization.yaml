@@ -10,3 +10,4 @@ resources:
   - traefik-charts.yaml
   - longhorn-charts.yaml
   - external-dns-charts.yaml
+  - minecraft-charts.yaml

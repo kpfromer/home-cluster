@@ -1,0 +1,27 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: minecraft
+  namespace: home
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://itzg.github.io/minecraft-server-charts/
+      chart: minecraft
+      version: 3.4.2
+      sourceRef:
+        kind: HelmRepository
+        name: minecraft-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    minecraftServer:
+      eula: "TRUE"
+      version: "1.16.5"
+      type: "CURSEFORGE"
+      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-slice-of-pi2-atm-slop2/download/3452307/file"
+      ops: "kpfromer"
+      maxPlayers: 10
+      pvp: true
