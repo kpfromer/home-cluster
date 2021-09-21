@@ -74,22 +74,20 @@ spec:
         type: emptyDir
         medium: Memory
 
-    # TODO:
-    # affinity:
-    #   nodeAffinity:
-    #     requiredDuringSchedulingIgnoredDuringExecution:
-    #       nodeSelectorTerms:
-    #         - matchExpressions:
-    #             - key: feature.node.kubernetes.io/custom-intel-gpu
-    #               operator: In
-    #               values:
-    #                 - "true"
-    #         - matchExpressions:
-    #             - key: kubernetes.io/hostname
-    #               operator: In
-    #               values:
-    #                 - k8s-4
-    #                 - k8s-5
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            # - matchExpressions:
+            #     - key: feature.node.kubernetes.io/custom-intel-gpu
+            #       operator: In
+            #       values:
+            #         - "true"
+            - matchExpressions:
+                - key: kubernetes.io/hostname
+                  operator: In
+                  values:
+                    - titian01
     resources:
       requests:
         # gpu.intel.com/i915: 1
