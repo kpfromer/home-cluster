@@ -22,6 +22,11 @@ spec:
     #   requests:
     #     memory: 6Gi
     #     cpu: 2000m
+    #
+    securityContext:
+      # Security context settings
+      runAsUser: 1000
+      fsGroup: 1000
 
     minecraftServer:
       eula: "TRUE"
