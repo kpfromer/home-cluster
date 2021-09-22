@@ -48,9 +48,9 @@ spec:
                   values:
                     - "amd64"
 
-    persistence:
-      dataDir:
-        enabled: true
-        type: emptyDir
-        medium: Memory
-        # existingClaim: nfs-minecraft-pvc
+    # persistence:
+    #   dataDir:
+    #     enabled: true
+    #     type: emptyDir
+    #     medium: Memory
+    # existingClaim: nfs-minecraft-pvc
