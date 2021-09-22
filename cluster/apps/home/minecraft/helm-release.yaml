@@ -26,10 +26,10 @@ spec:
     minecraftServer:
       eula: "TRUE"
       version: "1.16.5"
-      # type: "CURSEFORGE"
+      type: "CURSEFORGE"
       # cfServerMod: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-slice-of-pi2-atm-slop2/download/3452307/file"
       # cfServerMod: Enigmatica6Server-0.5.11.zip
-      # cfServerMod: "https://github.com/kpfromer/home-cluster/tree/main/cluster/apps/home/minecraft/Enigmatica6Server-0.5.11.zip?raw=true"
+      cfServerMod: "https://github.com/kpfromer/home-cluster/tree/main/cluster/apps/home/minecraft/Enigmatica6Server-0.5.11.zip?raw=true"
       ops: kpfromer
       maxPlayers: 10
       pvp: true
@@ -52,5 +52,5 @@ spec:
       dataDir:
         enabled: true
         type: emptyDir
-        # medium: Memory
+        medium: Memory
         # existingClaim: nfs-minecraft-pvc
