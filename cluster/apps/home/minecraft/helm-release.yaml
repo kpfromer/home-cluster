@@ -17,11 +17,27 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    imageTag: java8
+    resources:
+      requests:
+        memory: 6Gi
+        cpu: 2000m
+
     minecraftServer:
       eula: "TRUE"
       version: "1.16.5"
       type: "CURSEFORGE"
-      cfServerMod: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-slice-of-pi2-atm-slop2/download/3452307/file"
-      ops: "kpfromer"
+      # cfServerMod: "https://www.curseforge.com/minecraft/modpacks/all-the-mods-slice-of-pi2-atm-slop2/download/3452307/file"
+      cfServerMod: Enigmatica6Server-0.5.11.zip
+      ops: kpfromer
       maxPlayers: 10
       pvp: true
+      memory: 6144M
+      serviceType: LoadBalancer
+      loadBalancerIP: "192.168.0.75"
+      servicePort: 25565
+
+    # persistence:
+    #   dataDir:
+    #     enabled: true
+    #     existingClaim: nfs-minecraft-pvc
