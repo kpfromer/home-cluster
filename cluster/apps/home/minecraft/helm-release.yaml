@@ -37,6 +37,16 @@ spec:
       loadBalancerIP: "192.168.0.75"
       servicePort: 25565
 
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+                - key: kubernetes.io/arch
+                  operator: In
+                  values:
+                    - "amd64"
+
     # persistence:
     #   dataDir:
     #     enabled: true
