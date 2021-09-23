@@ -11,3 +11,4 @@ resources:
   - longhorn-charts.yaml
   - external-dns-charts.yaml
   - minecraft-charts.yaml
+  - nextcloud-charts.yaml
