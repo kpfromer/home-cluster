@@ -18,25 +18,24 @@ spec:
       interval: 5m
   values:
     ingress:
-      main:
-        enabled: true
-        annotations:
-          kubernetes.io/ingress.class: traefik
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          cert-manager.io/cluster-issuer: letsencrypt-production
-          hajimari.io/enable: "true"
-          hajimari.io/icon: "cloud"
-          # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
-          # external-dns/is-public: "true"
-        hosts:
-          - host: "nextcloud.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - secretName: tls.nextcloud
-            hosts:
-              - "nextcloud.${SECRET_DOMAIN}"
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        hajimari.io/enable: "true"
+        hajimari.io/icon: "cloud"
+        # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        # external-dns/is-public: "true"
+      hosts:
+        - host: "nextcloud.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: tls.nextcloud
+          hosts:
+            - "nextcloud.${SECRET_DOMAIN}"
 
     persistence:
       enabled: true
