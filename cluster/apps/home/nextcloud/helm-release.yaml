@@ -27,15 +27,12 @@ spec:
         hajimari.io/icon: "cloud"
         # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         # external-dns/is-public: "true"
-      hosts:
-        - host: "nextcloud.${SECRET_DOMAIN}"
-          paths:
-            - path: /
-              pathType: Prefix
       tls:
         - secretName: tls.nextcloud
           hosts:
             - "nextcloud.${SECRET_DOMAIN}"
+    nextcloud:
+      host: "nextcloud.${SECRET_DOMAIN}"
 
     persistence:
       enabled: true
