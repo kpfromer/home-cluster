@@ -28,6 +28,8 @@ spec:
         matchNames:
           - home
           - media
+          - networking
+          - longhorn-system
       name: "Kyle"
       customApps:
         # - name: Valetudo
