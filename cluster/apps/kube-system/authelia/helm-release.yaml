@@ -29,6 +29,9 @@ spec:
 
     domain: "${SECRET_DOMAIN}"
 
+    pod:
+      kind: Deployment
+
     # Persistence of /config
     persistence:
       enabled: true
