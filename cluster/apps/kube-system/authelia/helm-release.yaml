@@ -55,6 +55,7 @@ spec:
 
       traefikCRD:
         enabled: true
+        disableIngressRoute: true
         entryPoints: [websecure]
 
     configMap:
