@@ -78,6 +78,7 @@ spec:
         ingressClassName: "traefik"
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.middlewares: "kube-system-forwardauth-authelia@kubernetescrd"
         hosts:
           - host: "hajimari.${SECRET_DOMAIN}"
             paths:
