@@ -44,7 +44,7 @@ spec:
 
       tls:
         enabled: true
-        secret: tls.authelia
+        secret: "tls.authelia"
 
       annotations:
         kubernetes.io/ingress.class: traefik
@@ -55,15 +55,15 @@ spec:
 
       traefikCRD:
         enabled: true
-        entryPoints: [web, websecure]
+        entryPoints: [websecure]
 
     configMap:
       log:
         level: info
 
       enabled: true
-
       theme: light
+      default_redirection_url: "https://hajimari.${SECRET_DOMAIN}"
 
       authentication_backend:
         ldap:
