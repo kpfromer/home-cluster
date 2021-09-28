@@ -40,14 +40,20 @@ spec:
     # Login ingress
     ingress:
       enabled: true
+      subdomain: auth
+
       tls:
         enabled: true
         secret: tls.authelia
+
       annotations:
         kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         cert-manager.io/cluster-issuer: letsencrypt-production
-      subdomain: auth
+
+        traefikCRD:
+          enabled: true
+          entryPoints: [web, websecure]
 
     configMap:
       log:
