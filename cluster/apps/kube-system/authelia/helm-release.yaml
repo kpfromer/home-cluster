@@ -51,9 +51,9 @@ spec:
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         cert-manager.io/cluster-issuer: letsencrypt-production
 
-        traefikCRD:
-          enabled: true
-          entryPoints: [web, websecure]
+      traefikCRD:
+        enabled: true
+        entryPoints: [web, websecure]
 
     configMap:
       log:
