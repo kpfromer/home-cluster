@@ -1,0 +1,130 @@
+---
+# Followed: https://github.com/fernandopn/swarm/blob/bd403643f693980d65778b2fe8cfb221ed614bd8/cluster/apps/networking/authelia/helm-release.yaml
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: authelia
+  namespace: kube-system
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://charts.authelia.com
+      chart: authelia
+      version: 0.5.7
+      sourceRef:
+        kind: HelmRepository
+        name: authelia-charts
+        namespace: flux-system
+      interval: 5m
+  timeout: 20m
+  values:
+    resources:
+      limits:
+        cpu: 400m
+        memory: 512Mi
+      requests:
+        cpu: 200m
+        memory: 256Mi
+
+    domain: "${SECRET_DOMAIN}"
+
+    # Persistence of /config
+    persistence:
+      enabled: true
+      existingClaim: authelia
+
+    # Login ingress
+    ingress:
+      enabled: true
+      tls:
+        enabled: true
+        secret: tls.authelia
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        cert-manager.io/cluster-issuer: letsencrypt-production
+      subdomain: auth
+
+    configMap:
+      log:
+        level: info
+
+      enabled: true
+
+      theme: light
+
+      authentication_backend:
+        ldap:
+          enabled: false
+        file:
+          enabled: true
+
+      # Track sessions
+      session:
+        expiration: 4h
+        inactivity: 30m
+        redis:
+          enabled: false
+
+      # Persist sessions
+      storage:
+        local:
+          enabled: true
+        postgres:
+          enabled: false
+
+      # Notify (password reset)
+      notifier:
+        filesystem:
+          enabled: true
+        smtp:
+          enabled: false
+
+      # The Rules!!!
+      access_control:
+        default_policy: deny
+
+        networks:
+          - name: home
+            networks:
+              - 192.168.0.0/24
+
+        rules:
+          - domain:
+              # simple stuff
+              - "hajimari.${SECRET_DOMAIN}"
+              - "syncthing.${SECRET_DOMAIN}"
+            policy: bypass
+            networks:
+              - home
+
+          # At Home
+          - domain:
+              # kube-prometheus-stack
+              - "alertmanager.${SECRET_DOMAIN}"
+              - "grafana.${SECRET_DOMAIN}"
+              - "prometheus.${SECRET_DOMAIN}"
+              # Media
+              - "plex.${SECRET_DOMAIN}"
+              - "paperless.${SECRET_DOMAIN}"
+              - "youtube-dl.${SECRET_DOMAIN}"
+              # Systems
+              - "longhorn.${SECRET_DOMAIN}"
+              - "traefik.${SECRET_DOMAIN}"
+            policy: one_factor
+            subject:
+              - "group:admins"
+            networks:
+              - home
+
+          # Away
+          - domain:
+              # kube-prometheus-stack
+              # - "alertmanager.${SECRET_DOMAIN}"
+              # - "grafana.${SECRET_DOMAIN}"
+              # - "prometheus.${SECRET_DOMAIN}"
+              - "monica.${SECRET_DOMAIN}"
+            policy: two_factor
+            subject:
+              - "group:admins"
