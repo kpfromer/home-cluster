@@ -10,6 +10,7 @@ metadata:
     cert-manager.io/cluster-issuer: letsencrypt-production
     hajimari.io/enable: "true"
     hajimari.io/icon: "traffic-light"
+    hajimari.io/appName: "traefik"
 spec:
   tls:
     - secretName: "tls.traefik-dashboard"
