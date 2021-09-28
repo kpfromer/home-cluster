@@ -53,9 +53,9 @@ spec:
         external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
         external-dns/is-public: "true"
 
-        traefikCRD:
-          enabled: true
-          entryPoints: [web, websecure]
+      traefikCRD:
+        enabled: true
+        entryPoints: [web, websecure]
 
     configMap:
       log:

@@ -26,6 +26,7 @@ spec:
         annotations:
           kubernetes.io/ingress.class: traefik
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          traefik.ingress.kubernetes.io/router.middlewares: "kube-system-forwardauth-authelia@kubernetescrd"
           cert-manager.io/cluster-issuer: letsencrypt-production
         hosts:
           - host: "homer.${SECRET_DOMAIN}"

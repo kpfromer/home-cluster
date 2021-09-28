@@ -30,3 +30,19 @@ Longhorn handles:
 ### Issues
 
 If pods are running into mount issues with longhorn pvcs make sure that multipath is disabled ([read here](https://longhorn.io/kb/troubleshooting-volume-with-multipath/)) for **all** nodes.
+
+## Authelia
+
+### Description
+
+TODO:
+
+### How it connects
+
+TODO: traefik middleware, how the helm chart works
+
+how to secure endpoints
+
+how to configure auth for endpoints
+
+creating users/change passwords
