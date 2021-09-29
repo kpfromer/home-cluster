@@ -107,6 +107,7 @@ spec:
               # simple stuff
               - "hajimari.${SECRET_DOMAIN}"
               - "syncthing.${SECRET_DOMAIN}"
+              - "plex.${SECRET_DOMAIN}"
             policy: bypass
             networks:
               - home
@@ -118,7 +119,6 @@ spec:
               - "grafana.${SECRET_DOMAIN}"
               - "prometheus.${SECRET_DOMAIN}"
               # Media
-              - "plex.${SECRET_DOMAIN}"
               - "paperless.${SECRET_DOMAIN}"
               - "youtube-dl.${SECRET_DOMAIN}"
               # Systems
