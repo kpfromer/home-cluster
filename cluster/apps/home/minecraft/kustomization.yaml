@@ -1,4 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - helm-release.yaml
+  # vanilla minecraft
+  # - helm-release.yaml
+  # Modpack
+  - app.yaml
+  - pvc.yaml

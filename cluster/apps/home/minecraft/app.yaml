@@ -1,0 +1,56 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: minecraft-atm6
+  namespace: home
+spec:
+  loadBalancerIP: 192.168.0.75
+  ports:
+    - name: minecraft
+      port: 25565
+      protocol: TCP
+      targetPort: minecraft
+  selector:
+    app: minecraft-atm6
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: minecraft-atm6
+  namespace: home
+spec:
+  selector:
+    matchLabels:
+      app: minecraft-atm6
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: minecraft-atm6
+    spec:
+      containers:
+        - image: curseforge/all-the-mods-6:latest
+          name: minecraft-atm6
+          ports:
+            - containerPort: 25565
+              name: minecraft
+              protocol: TCP
+          volumeMounts:
+            - name: minecraft-atm6-world
+              mountPath: /minecraft
+      volumes:
+        - name: minecraft-atm6-world
+          persistentVolumeClaim:
+            claimName: minecraft-atm6
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/amd64
+                    operator: In
+                    values:
+                      - "amd64"
