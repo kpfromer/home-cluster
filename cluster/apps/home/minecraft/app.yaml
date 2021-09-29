@@ -39,7 +39,7 @@ spec:
               protocol: TCP
           volumeMounts:
             - name: minecraft-atm6-world
-              mountPath: /minecraft
+              mountPath: /minecraft/world
       volumes:
         - name: minecraft-atm6-world
           persistentVolumeClaim:
