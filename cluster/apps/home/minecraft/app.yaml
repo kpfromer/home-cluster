@@ -34,7 +34,8 @@ spec:
         - image: curseforge/all-the-mods-6:latest
           name: minecraft-atm6
           env:
-            EULA: "true"
+            - name: EULA
+              value: "true"
           ports:
             - containerPort: 25565
               name: minecraft
