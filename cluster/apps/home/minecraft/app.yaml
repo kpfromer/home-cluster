@@ -31,7 +31,7 @@ spec:
         app: minecraft-atm6
     spec:
       containers:
-        - image: curseforge/all-the-mods-6:latest
+        - image: ghcr.io/kpfromer/atm6-lite:latest
           name: minecraft-atm6
           env:
             - name: EULA
@@ -43,6 +43,8 @@ spec:
           volumeMounts:
             - name: minecraft-atm6-world
               mountPath: /minecraft/world
+            # TODO: mods folder
+            # TODO: settings file/folder
       volumes:
         - name: minecraft-atm6-world
           persistentVolumeClaim:
