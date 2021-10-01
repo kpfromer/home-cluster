@@ -43,12 +43,15 @@ spec:
           volumeMounts:
             - name: minecraft-atm6-world
               mountPath: /minecraft/world
-            # TODO: mods folder
-            # TODO: settings file/folder
+            - name: minecraft-atm6-mods
+              mountPath: /minecraft/mods
       volumes:
         - name: minecraft-atm6-world
           persistentVolumeClaim:
             claimName: minecraft-atm6
+        - name: minecraft-atm6-mods
+          persistentVolumeClaim:
+            claimName: minecraft-atm6-mods
 
       affinity:
         nodeAffinity:
