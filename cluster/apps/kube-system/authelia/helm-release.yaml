@@ -80,6 +80,7 @@ spec:
           enabled: false
 
       # Persist sessions
+      # TODO: update to postgres
       storage:
         local:
           enabled: true
@@ -87,6 +88,7 @@ spec:
           enabled: false
 
       # Notify (password reset)
+      # TODO: update to smtp
       notifier:
         filesystem:
           enabled: true
@@ -106,7 +108,6 @@ spec:
           - domain:
               # simple stuff
               - "hajimari.${SECRET_DOMAIN}"
-              - "syncthing.${SECRET_DOMAIN}"
               - "plex.${SECRET_DOMAIN}"
             policy: bypass
             networks:
@@ -115,15 +116,13 @@ spec:
           # At Home
           - domain:
               # kube-prometheus-stack
-              - "alertmanager.${SECRET_DOMAIN}"
-              - "grafana.${SECRET_DOMAIN}"
-              - "prometheus.${SECRET_DOMAIN}"
-              # Media
-              - "paperless.${SECRET_DOMAIN}"
-              - "youtube-dl.${SECRET_DOMAIN}"
+              # - "alertmanager.${SECRET_DOMAIN}"
+              # - "grafana.${SECRET_DOMAIN}"
+              # - "prometheus.${SECRET_DOMAIN}"
               # Systems
               - "longhorn.${SECRET_DOMAIN}"
               - "traefik.${SECRET_DOMAIN}"
+              - "syncthing.${SECRET_DOMAIN}"
             policy: one_factor
             subject:
               - "group:admins"
@@ -136,6 +135,9 @@ spec:
               # - "alertmanager.${SECRET_DOMAIN}"
               # - "grafana.${SECRET_DOMAIN}"
               # - "prometheus.${SECRET_DOMAIN}"
+              # Media
+              - "paperless.${SECRET_DOMAIN}"
+              - "youtube-dl.${SECRET_DOMAIN}"
               - "monica.${SECRET_DOMAIN}"
             policy: two_factor
             subject:
