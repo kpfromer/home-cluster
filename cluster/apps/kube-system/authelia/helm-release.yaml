@@ -136,9 +136,13 @@ spec:
               # - "grafana.${SECRET_DOMAIN}"
               # - "prometheus.${SECRET_DOMAIN}"
               # Media
-              - "paperless.${SECRET_DOMAIN}"
               - "youtube-dl.${SECRET_DOMAIN}"
               - "monica.${SECRET_DOMAIN}"
             policy: two_factor
             subject:
               - "group:admins"
+
+          # Away (NO AUTH)
+          - domain:
+              - "paperless.${SECRET_DOMAIN}"
+            policy: bypass
