@@ -75,6 +75,9 @@ spec:
         annotations:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           traefik.ingress.kubernetes.io/router.middlewares: "kube-system-forwardauth-authelia@kubernetescrd"
+          cert-manager.io/cluster-issuer: letsencrypt-production
+          external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+          external-dns/is-public: "true"
         hosts:
           - host: "hajimari.${SECRET_DOMAIN}"
             paths:
