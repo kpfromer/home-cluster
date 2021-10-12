@@ -32,15 +32,9 @@ spec:
           - longhorn-system
       name: "Kyle"
       customApps:
-        # - name: Valetudo
-        #   url: "http://192.168.1.28"
-        #   icon: "robot-vacuum"
-        # - name: PiAware
-        #   url: "http://192.168.150.25:8080"
-        #   icon: "airplane"
-        # - name: HDHomeRun
-        #   url: "http://192.168.150.30"
-        #   icon: "antenna"
+        - name: Pi Hole
+          url: "http://192.168.0.51/admin"
+          icon: "raspberry-pi"
       groups:
         - name: School
           links:
@@ -50,6 +44,8 @@ spec:
               url: "https://calendar.google.com"
             - name: Drive
               url: "https://drive.google.com"
+        - name: My External Services
+          links: []
         - name: Communicate
           links:
             - name: Discord
