@@ -138,11 +138,12 @@ spec:
               # Media
               - "youtube-dl.${SECRET_DOMAIN}"
               - "monica.${SECRET_DOMAIN}"
+              - "hajimari.${SECRET_DOMAIN}"
             policy: two_factor
             subject:
               - "group:admins"
 
           # Away (NO AUTH)
-          - domain:
-              - "paperless.${SECRET_DOMAIN}"
-            policy: bypass
+          # - domain:
+          #     - "paperless.${SECRET_DOMAIN}"
+          #   policy: bypass
