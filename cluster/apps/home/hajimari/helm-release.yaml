@@ -44,8 +44,6 @@ spec:
               url: "https://calendar.google.com"
             - name: Drive
               url: "https://drive.google.com"
-        - name: My External Services
-          links: []
         - name: Communicate
           links:
             - name: Discord
@@ -68,6 +66,12 @@ spec:
           links:
             - name: Hacker News
               url: "https://news.ycombinator.com/"
+        - name: My External Services
+          links:
+            - name: Home Cluster Docs
+              url: "https://home-cluster-kpfromer.vercel.app"
+            - name: Portfolio
+              url: "https://kylepfromer.com"
     ingress:
       main:
         enabled: true
