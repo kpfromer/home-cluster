@@ -109,7 +109,7 @@ spec:
               # simple stuff
               - "hajimari.${SECRET_DOMAIN}"
               - "plex.${SECRET_DOMAIN}"
-              # - "paperless.${SECRET_DOMAIN}"
+              - "paperless.${SECRET_DOMAIN}"
             policy: bypass
             networks:
               - home
