@@ -1,0 +1,45 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: filebrowser
+  namespace: home
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://utkuozdemir.org/helm-charts
+      chart: filebrowser
+      version: 7.0.1
+      sourceRef:
+        kind: HelmRepository
+        name: filebrowser-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    env:
+      TZ: "America/Denver"
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: traefik
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        traefik.ingress.kubernetes.io/router.middlewares: "kube-system-forwardauth-authelia@kubernetescrd"
+        cert-manager.io/cluster-issuer: letsencrypt-production
+        hajimari.io/enable: "true"
+        # hajimari.io/icon: "leaf"
+        # external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+        # external-dns/is-public: "true"
+      hosts:
+        - host: "filebrowser.${SECRET_DOMAIN}"
+          paths:
+            - path: /
+              pathType: Prefix
+      tls:
+        - secretName: tls.filebrowser
+          hosts:
+            - "filebrowser.${SECRET_DOMAIN}"
+    persistence:
+      db:
+        enabled: true
+        existingClaim: filebrowser-data

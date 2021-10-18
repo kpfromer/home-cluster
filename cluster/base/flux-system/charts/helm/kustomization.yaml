@@ -12,4 +12,4 @@ resources:
   - external-dns-charts.yaml
   - minecraft-charts.yaml
   - authelia-charts.yaml
-  - nextcloud-charts.yaml
+  - filebrowser-charts.yaml
