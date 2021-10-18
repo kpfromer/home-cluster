@@ -31,6 +31,10 @@ spec:
         hajimari.io/enable: "true"
         # TODO
         # hajimari.io/icon: "plex"
+      tls:
+        - secretName: tls.nextcloud
+          hosts:
+            - "cloud.${SECRET_DOMAIN}"
       hosts:
         - host: "cloud.${SECRET_DOMAIN}"
           paths:
