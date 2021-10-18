@@ -7,4 +7,5 @@ resources:
   - paperless
   - syncthing
   - youtube-dl
+  - nextcloud
   # - minecraft
