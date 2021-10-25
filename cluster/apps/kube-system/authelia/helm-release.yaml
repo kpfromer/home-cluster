@@ -140,6 +140,7 @@ spec:
               - "youtube-dl.${SECRET_DOMAIN}"
               - "monica.${SECRET_DOMAIN}"
               - "hajimari.${SECRET_DOMAIN}"
+              - "filebrowser.${SECRET_DOMAIN}"
             policy: two_factor
             subject:
               - "group:admins"
