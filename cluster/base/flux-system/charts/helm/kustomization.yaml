@@ -13,3 +13,4 @@ resources:
   - minecraft-charts.yaml
   - authelia-charts.yaml
   - filebrowser-charts.yaml
+  - teleport-charts.yaml
