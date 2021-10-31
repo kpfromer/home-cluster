@@ -35,6 +35,26 @@ spec:
           secretKeyRef:
             name: mysql-secret
             key: password
+      MAIL_MAILER: smtp
+      MAIL_HOST: smtp.mailgun.org
+      MAIL_PORT: 587 # is using tls, as you should
+      MAIL_ENCRYPTION: tls
+      MAIL_FROM_NAME: Monica
+      MAIL_USERNAME:
+        valueFrom:
+          secretKeyRef:
+            name: monica-secret
+            key: mailServiceUsername
+      MAIL_PASSWORD:
+        valueFrom:
+          secretKeyRef:
+            name: monica-secret
+            key: mailServicePassword
+      MAIL_FROM_ADDRESS:
+        valueFrom:
+          secretKeyRef:
+            name: monica-secret
+            key: mailFromAddress
     ingress:
       main:
         enabled: true
