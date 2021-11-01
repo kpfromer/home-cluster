@@ -16,4 +16,4 @@ spec:
         name: teleport-charts
         namespace: flux-system
   values:
-    clusterName: home
+    clusterName: "teleport.${SECRET_DOMAIN}"
