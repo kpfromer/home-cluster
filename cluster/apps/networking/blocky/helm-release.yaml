@@ -35,8 +35,8 @@ spec:
       dns-tcp:
         enabled: true
         type: LoadBalancer
-        externalIPs:
-          - "${SVC_BLOCKY_ADDR}"
+        loadBalancerIP: ${SVC_BLOCKY_ADDR}"
+        externalTrafficPolicy: Local
         ports:
           dns-tcp:
             enabled: true
@@ -46,15 +46,14 @@ spec:
       dns-udp:
         enabled: true
         type: LoadBalancer
-        externalIPs:
-          - "${SVC_BLOCKY_ADDR}"
+        loadBalancerIP: "${SVC_BLOCKY_ADDR}"
+        externalTrafficPolicy: Local
         ports:
-          udp:
+          dns-tcp:
             enabled: true
             port: 53
             protocol: UDP
             targetPort: 53
-        externalTrafficPolicy: Local
     config: |
       upstream:
         default:
