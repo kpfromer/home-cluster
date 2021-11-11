@@ -46,3 +46,11 @@ how to secure endpoints
 how to configure auth for endpoints
 
 creating users/change passwords
+
+## Blocky
+
+### Description
+
+It's the DNS proxy as ad-blocker for local network.
+
+It handles setting up the secret domain DNS mapping and blocking ADS!
