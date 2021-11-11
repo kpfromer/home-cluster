@@ -41,7 +41,7 @@ spec:
       enabled: true
       type: LoadBalancer
       spec:
-        loadBalancerIP: "${INGRESS_NGINX_LB}"
+        loadBalancerIP: "${CLUSTER_TRAEFIK_ADDR}"
         externalTrafficPolicy: Local
 
     ingressClass:
@@ -60,7 +60,7 @@ spec:
       # - "--metrics.prometheus=true"
       # - "--metrics.prometheus.entryPoint=metrics"
     additionalArguments:
-      - "--providers.kubernetesingress.ingressendpoint.ip=${INGRESS_NGINX_LB}"
+      - "--providers.kubernetesingress.ingressendpoint.ip=${CLUSTER_TRAEFIK_ADDR}"
 
     # metrics:
     #   prometheus:

@@ -250,7 +250,7 @@ export BOOTSTRAP_DOMAIN="k8s-at-home.com"
 # Pick a range of unused IPs that are on the same network as your nodes
 export BOOTSTRAP_METALLB_LB_RANGE="169.254.1.10-169.254.1.20"
 # The load balancer IP for ingress-nginx, choose from one of the available IPs above
-export BOOTSTRAP_INGRESS_NGINX_LB="169.254.1.10"
+export BOOTSTRAP_CLUSTER_TRAEFIK_ADDR="169.254.1.10"
 ```
 
 5. Create required files based on ALL exported environment variables.
@@ -343,7 +343,7 @@ kubectl --kubeconfig=./kubeconfig get pods -n flux-system
 If your cluster is not accessible to outside world you can update your hosts file to verify the ingress controller is working.
 
 ```sh
-echo "${BOOTSTRAP_INGRESS_NGINX_LB} ${BOOTSTRAP_DOMAIN} homer.${BOOTSTRAP_DOMAIN}" | sudo tee -a /etc/hosts
+echo "${BOOTSTRAP_CLUSTER_TRAEFIK_ADDR} ${BOOTSTRAP_DOMAIN} homer.${BOOTSTRAP_DOMAIN}" | sudo tee -a /etc/hosts
 ```
 
 Head over to your browser and you _should_ be able to access `https://homer.${BOOTSTRAP_DOMAIN}`
