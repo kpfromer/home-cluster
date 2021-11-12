@@ -35,7 +35,7 @@ spec:
       dns-tcp:
         enabled: true
         type: LoadBalancer
-        loadBalancerIP: ${SVC_BLOCKY_ADDR}"
+        loadBalancerIP: "${SVC_BLOCKY_ADDR}"
         externalTrafficPolicy: Local
         ports:
           dns-tcp:
@@ -86,18 +86,6 @@ spec:
         clientGroupsBlock:
           default:
             - ads
-    # affinity:
-    #   podAntiAffinity:
-    #     preferredDuringSchedulingIgnoredDuringExecution:
-    #       - weight: 100
-    #         podAffinityTerm:
-    #           labelSelector:
-    #             matchExpressions:
-    #               - key: app.kubernetes.io/name
-    #                 operator: In
-    #                 values:
-    #                   - blocky
-    #           topologyKey: kubernetes.io/hostname
     resources:
       requests:
         memory: 100Mi
