@@ -2,11 +2,17 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - bitnami-charts.yaml
-  - ealenn-charts.yaml
+  - deliveryhero-charts.yaml
+  - descheduler-charts.yaml
+  - grafana-charts.yaml
   - hajimari-charts.yaml
   - jetstack-charts.yaml
   - k8s-at-home-charts.yaml
   - metallb-charts.yaml
+  - metrics-server-charts.yaml
+  - minio-charts.yaml
+  - node-feature-discovery-charts.yaml
+  - prometheus-community-charts.yaml
   - traefik-charts.yaml
   - longhorn-charts.yaml
   - external-dns-charts.yaml
