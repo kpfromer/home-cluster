@@ -6,8 +6,5 @@ metadata:
   namespace: flux-system
 data:
   METALLB_LB_RANGE: 192.168.0.70-192.168.0.80
-  # Cluster wide
   CLUSTER_TRAEFIK_ADDR: 192.168.0.70
-  CLUSTER_LB_LONGHORN: 192.168.0.71
-  # Services
-  SVC_BLOCKY_ADDR: 192.168.0.72
+  METALLB_TRAEFIK_ADDR: 192.168.0.70
