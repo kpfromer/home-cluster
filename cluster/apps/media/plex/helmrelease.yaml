@@ -92,7 +92,7 @@ spec:
                 - key: kubernetes.io/hostname
                   operator: In
                   values:
-                    - titian01
+                    - k8s-0
     resources:
       requests:
         # gpu.intel.com/i915: 1
