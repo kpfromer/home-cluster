@@ -36,7 +36,8 @@ spec:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_BLOCKY_ADDR}"
-        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/allow-shared-ip: blocky
         ports:
           dns-tcp:
             enabled: true
@@ -47,13 +48,15 @@ spec:
         enabled: true
         type: LoadBalancer
         loadBalancerIP: "${SVC_BLOCKY_ADDR}"
-        externalTrafficPolicy: Local
+        annotations:
+          metallb.universe.tf/allow-shared-ip: blocky
         ports:
-          dns-tcp:
+          dns-udp:
             enabled: true
             port: 53
             protocol: UDP
             targetPort: 53
+        externalTrafficPolicy: Local
     config: |
       upstream:
         default:
