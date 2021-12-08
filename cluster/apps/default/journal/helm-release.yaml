@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: postgresql
-          image: postgres:10.1
+          image: postgres:latest
           imagePullPolicy: "IfNotPresent"
           ports:
             - containerPort: 5432
@@ -39,3 +39,25 @@ spec:
         - name: postgredb
           persistentVolumeClaim:
             claimName: postgres-data
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/arch
+                    operator: In
+                    values:
+                      - "amd64"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: postgresql
+  namespace: default
+spec:
+  ports:
+    - port: 5432
+  selector:
+    app: mysql
+  clusterIP: None
