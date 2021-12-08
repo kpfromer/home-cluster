@@ -32,6 +32,8 @@ spec:
                 secretKeyRef:
                   name: journal-site-secret
                   key: password
+            - name: PGDATA
+              value: /var/lib/postgresql/data
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: postgredb
