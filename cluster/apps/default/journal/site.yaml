@@ -48,3 +48,33 @@ spec:
                     operator: In
                     values:
                       - "amd64"
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: journal
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+    # traefik.ingress.kubernetes.io/router.middlewares: "kube-system-forwardauth-authelia@kubernetescrd"
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    # hajimari.io/enable: "true"
+    # hajimari.io/icon: "traffic-light"
+    # hajimari.io/appName: "traefik"
+spec:
+  tls:
+    - secretName: "tls.journal"
+      hosts:
+        - "journal.${SECRET_DOMAIN}"
+  rules:
+    - host: journal.${SECRET_DOMAIN}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: journal
+                port:
+                  number: 3000
