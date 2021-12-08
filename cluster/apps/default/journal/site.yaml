@@ -1,0 +1,50 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: journal
+  namespace: default
+spec:
+  ports:
+    - port: 3000
+  selector:
+    app: journal
+  clusterIP: None
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: journal
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: journal
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: journal
+    spec:
+      containers:
+        - image: ghcr.io/kpfromer/journal-site/journal-site:latest
+          name: journal
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: journal-site-secret
+                  key: url
+          ports:
+            - containerPort: 3000
+              name: web
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/arch
+                    operator: In
+                    values:
+                      - "amd64"
