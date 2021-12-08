@@ -17,16 +17,9 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    postgresqlUsername:
-      valueFrom:
-        secretKeyRef:
-          name: journal-site-secret
-          key: username
-    postgresqlPassword:
-      valueFrom:
-        secretKeyRef:
-          name: journal-site-secret
-          key: password
+    # TODO: improve to use secret
+    postgresqlUsername: "kpfromer"
+    postgresqlPassword: "kpfromer123"
     persistence:
       enabled: true
     resources:
