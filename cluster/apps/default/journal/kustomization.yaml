@@ -4,3 +4,4 @@ resources:
   - site.yaml
   - helm-release.yaml
   - secret.yaml
+  - pvc.yaml

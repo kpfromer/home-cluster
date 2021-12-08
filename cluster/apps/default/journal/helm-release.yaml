@@ -1,29 +1,41 @@
----
-apiVersion: helm.toolkit.fluxcd.io/v2beta1
-kind: HelmRelease
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: postgresql
   namespace: default
 spec:
-  interval: 5m
-  chart:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgresql
+  template:
+    metadata:
+      labels:
+        app: postgresql
     spec:
-      # renovate: registryUrl=https://charts.bitnami.com/bitnami
-      chart: postgresql
-      version: 10.13.11
-      sourceRef:
-        kind: HelmRepository
-        name: bitnami-charts
-        namespace: flux-system
-      interval: 5m
-  values:
-    # TODO: improve to use secret
-    postgresqlUsername: "postgres"
-    postgresqlPassword: "kpfromer123"
-    postgresqlPostgresPassword: "kpfromer123"
-    persistence:
-      enabled: true
-    resources:
-      requests:
-        cpu: 100m
-        memory: 128M
+      containers:
+        - name: postgresql
+          image: postgres:10.1
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_DB
+              value: journalSite
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: journal-site-secret
+                  key: username
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: journal-site-secret
+                  key: password
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgredb
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: postgres-data
