@@ -28,7 +28,8 @@ spec:
         path: /
         pathType: Prefix
         tls:
-          - hosts:
+          - secretName: tls.prometheus
+            hosts:
               - prom.${SECRET_DOMAIN}
       prometheusSpec:
         serviceMonitorSelector: {}
@@ -62,7 +63,8 @@ spec:
           - grafana.${SECRET_DOMAIN}
         path: /
         tls:
-          - hosts:
+          - secretName: tls.grafana
+            hosts:
               - grafana.${SECRET_DOMAIN}
       persistence:
         accessModes:
