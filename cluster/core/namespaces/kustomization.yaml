@@ -7,3 +7,5 @@ resources:
   - networking.yaml
   - media.yaml
   - longhorn-system.yaml
+  - monitoring.yaml
+
