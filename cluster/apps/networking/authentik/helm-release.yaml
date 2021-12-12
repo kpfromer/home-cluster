@@ -49,9 +49,9 @@ spec:
     authentik:
       log_level: debug
       postgresql:
-        host: "authentik-postgres"
+        host: "authentik-postgresql"
         name: "postgres"
-        user: "postgres"
+        user: "kpfromer"
     redis:
       enabled: true
       image:

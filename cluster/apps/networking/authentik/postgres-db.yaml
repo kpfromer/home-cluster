@@ -7,11 +7,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgresqlauthentik-postgresql
+      app: authentik-postgresql
   template:
     metadata:
       labels:
-        app: postgresqlauthentik-postgresql
+        app: authentik-postgresql
     spec:
       containers:
         - name: postgresql
