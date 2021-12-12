@@ -6,4 +6,5 @@ resources:
   - traefik
   - wildcard-certificate
   - blocky
+  - authentik
   # - cloudflare-ddns

@@ -19,3 +19,4 @@ resources:
   - minecraft-charts.yaml
   - authelia-charts.yaml
   - filebrowser-charts.yaml
+  - authentik-charts.yaml
