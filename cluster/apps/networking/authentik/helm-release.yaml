@@ -35,7 +35,7 @@ spec:
             - path: "/"
               pathType: Prefix
       tls:
-        - hosts: authentik.${SECRET_DOMAIN}
+        - hosts: ["authentik.${SECRET_DOMAIN}"]
           secretName: tls.authentick
     envValueFrom:
       AUTHENTIK_POSTGRESQL__PASSWORD:
