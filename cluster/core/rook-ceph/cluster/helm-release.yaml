@@ -41,16 +41,16 @@ spec:
         useAllDevices: false
         config:
           osdsPerDevice: "1"
-          nodes:
-            - name: "k8s-0"
-              devices:
-                - name: "sda"
-            - name: "k8s-1"
-              devices:
-                - name: "sda"
-            - name: "k8s-2"
-              devices:
-                - name: "sdc"
+        nodes:
+          - name: "k8s-0"
+            devices:
+              - name: "sda"
+          - name: "k8s-1"
+            devices:
+              - name: "sda"
+          - name: "k8s-2"
+            devices:
+              - name: "sdc"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
