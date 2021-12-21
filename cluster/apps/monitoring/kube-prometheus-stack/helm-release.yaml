@@ -47,6 +47,7 @@ spec:
               resources:
                 requests:
                   storage: 20Gi
+              storageClassName: ceph-block
     grafana:
       adminPassword: ${SECRET_GRAFANA_PASSWORD}
       grafana.ini:
