@@ -23,7 +23,8 @@ spec:
     ingress:
       dashboard:
         annotations:
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          cert-manager.io/cluster-issuer: letsencrypt-production
         host:
           name: "rook.${SECRET_DOMAIN}"
           path: "/"
@@ -40,19 +41,16 @@ spec:
         useAllDevices: false
         config:
           osdsPerDevice: "1"
-        # nodes:
-        #   - name: "k8s-3"
-        #     devices:
-        #       - name: "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"
-        #   - name: "k8s-4"
-        #     devices:
-        #       - name: "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"
-        #   - name: "k8s-5"
-        #     devices:
-        #       - name: "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"
-        #   - name: "k8s-6"
-        #     devices:
-        #       - name: "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi2"
+          nodes:
+            - name: "k8s-0"
+              devices:
+                - name: "sda"
+            - name: "k8s-1"
+              devices:
+                - name: "sda"
+            - name: "k8s-2"
+              devices:
+                - name: "sdc"
     cephBlockPools:
       - name: ceph-blockpool
         spec:
