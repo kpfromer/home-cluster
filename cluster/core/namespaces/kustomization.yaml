@@ -8,4 +8,4 @@ resources:
   - media.yaml
   - longhorn-system.yaml
   - monitoring.yaml
-
+  - rook-ceph.yaml
