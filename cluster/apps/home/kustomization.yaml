@@ -8,4 +8,5 @@ resources:
   - syncthing
   - youtube-dl
   - filebrowser
+  - jellyfin
   # - minecraft
