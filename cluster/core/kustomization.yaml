@@ -6,5 +6,5 @@ resources:
   - metallb-system
   - cert-manager
   - system-upgrade
-  # - longhorn
-  - rook-ceph
+  - longhorn
+  # - rook-ceph
