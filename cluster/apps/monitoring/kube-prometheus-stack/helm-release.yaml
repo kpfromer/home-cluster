@@ -47,7 +47,7 @@ spec:
               resources:
                 requests:
                   storage: 20Gi
-              storageClassName: longhorn-backup
+
     grafana:
       adminPassword: ${SECRET_GRAFANA_PASSWORD}
       grafana.ini:
