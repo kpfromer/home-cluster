@@ -58,6 +58,11 @@ spec:
             paths:
               - path: /
                 pathType: Prefix
+                backend:
+                  service:
+                    name: home-assistant
+                    port:
+                      number: 8123
         tls:
           - secretName: tls.home-assistant
             hosts:
