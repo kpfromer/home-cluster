@@ -31,8 +31,8 @@ spec:
     cleanupOnFail: true
   values:
     image:
-      repository: homeassistant/home-assistant
-      tag: 2022.2.2
+      repository: ghcr.io/home-assistant/home-assistant
+      tag: "2021.7.4"
     env:
       TZ: "America/Denver"
     # probes:
