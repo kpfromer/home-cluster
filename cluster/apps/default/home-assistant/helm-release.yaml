@@ -46,6 +46,22 @@ spec:
       config:
         enabled: true
         existingClaim: home-assistant-config
+    ingress:
+      main:
+        enabled: true
+        annotations:
+          kubernetes.io/ingress.class: traefik
+          traefik.ingress.kubernetes.io/router.entrypoints: websecure
+          cert-manager.io/cluster-issuer: letsencrypt-production
+        hosts:
+          - host: "home.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - secretName: tls.home-assistant
+            hosts:
+              - "home.${SECRET_DOMAIN}"
     addons:
       codeserver:
         enabled: true
@@ -65,14 +81,14 @@ spec:
               traefik.ingress.kubernetes.io/router.entrypoints: websecure
               cert-manager.io/cluster-issuer: letsencrypt-production
             hosts:
-              - host: "home.${SECRET_DOMAIN}"
+              - host: "home-config.${SECRET_DOMAIN}"
                 paths:
                   - path: /
                     pathType: Prefix
             tls:
-              - secretName: tls.home-assistant
+              - secretName: tls.home-assistant-config
                 hosts:
-                  - "home.${SECRET_DOMAIN}"
+                  - "home-config.${SECRET_DOMAIN}"
         volumeMounts:
           - name: config
             mountPath: /config
