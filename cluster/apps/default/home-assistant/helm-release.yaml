@@ -32,16 +32,21 @@ spec:
   values:
     image:
       repository: ghcr.io/home-assistant/home-assistant
-      tag: "2021.7.4"
+      tag: 2021.12.10
     env:
       TZ: "America/Denver"
-    # probes:
-    #   liveness:
-    #     enabled: false
-    #   readiness:
-    #     enabled: false
-    #   startup:
-    #     enabled: false
+    hostNetwork: true
+    dnsPolicy: ClusterFirstWithHostNet
+    prometheus:
+      serviceMonitor:
+        enabled: false
+    probes:
+      liveness:
+        enabled: false
+      readiness:
+        enabled: false
+      startup:
+        enabled: false
     persistence:
       config:
         enabled: true
