@@ -37,6 +37,14 @@ spec:
       TZ: "America/Denver"
     hostNetwork: true
     dnsPolicy: ClusterFirstWithHostNet
+    service:
+      main:
+        type: LoadBalancer
+        loadBalancerIP: "${HOME_ASSISTANT_ADDR}"
+        # ports:
+        #   sonos:
+        #     enabled: true
+        #     port: 1400
     prometheus:
       serviceMonitor:
         enabled: false
