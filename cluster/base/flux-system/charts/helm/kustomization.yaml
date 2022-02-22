@@ -20,4 +20,3 @@ resources:
   - authelia-charts.yaml
   - filebrowser-charts.yaml
   - authentik-charts.yaml
-  - rook-ceph-charts.yaml
