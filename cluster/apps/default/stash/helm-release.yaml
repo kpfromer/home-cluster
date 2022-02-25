@@ -16,7 +16,6 @@ spec:
       version: 3.2.0
   interval: 5m
   values:
-    image:
     env:
       TZ: "America/Denver"
     ingress:
