@@ -124,6 +124,7 @@ spec:
               - "longhorn.${SECRET_DOMAIN}"
               - "traefik.${SECRET_DOMAIN}"
               - "syncthing.${SECRET_DOMAIN}"
+              - "stash.${SECRET_DOMAIN}"
             policy: one_factor
             subject:
               - "group:admins"
