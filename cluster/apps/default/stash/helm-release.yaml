@@ -53,7 +53,7 @@ spec:
             server: 192.168.0.55
             path: /mnt/kpfromer-22TB-Z2/kpfromer-encrypted/Stuff/Videos
         mountPath: /media
-        readOnly: true
+        # readOnly: true
       images:
         enabled: true
         type: custom
