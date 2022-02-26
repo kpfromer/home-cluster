@@ -74,15 +74,6 @@ spec:
             path: /mnt/kpfromer-22TB-Z2/Plex
         mountPath: /media
         readOnly: true
-      other-media-two:
-        enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: 192.168.0.55
-            path: /mnt/kpfromer-22TB-Z2/kpfromer-encrypted/Stuff/Videos
-        mountPath: /other-media-two
-        readOnly: true
     resources:
       requests:
         memory: 1000Mi
