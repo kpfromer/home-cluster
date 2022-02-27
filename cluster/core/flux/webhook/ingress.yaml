@@ -3,7 +3,17 @@ kind: Ingress
 metadata:
   name: webhook-receiver
   namespace: flux-system
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    cert-manager.io/cluster-issuer: letsencrypt-production
+    external-dns.alpha.kubernetes.io/target: "ipv4.${SECRET_DOMAIN}"
+    external-dns/is-public: "true"
 spec:
+  tls:
+    - secretName: "tls.webhook"
+      hosts:
+        - "webhook.${SECRET_DOMAIN}"
   rules:
     - host: webhook.${SECRET_DOMAIN}
       http:
