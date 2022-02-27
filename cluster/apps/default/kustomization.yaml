@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - journal
   - home-assistant
+  - jellyfin
   - stash
   - stash-2
