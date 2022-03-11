@@ -21,6 +21,7 @@ spec:
       tag: "20220121"
     env:
       TZ: "America/Denver"
+      PHOTOPRISM_ORIGINALS_PATH: /media/Photos/originals
       PHOTOPRISM_ADMIN_PASSWORD: ${SECRET_PASSWORD}
     ingress:
       main:
@@ -54,7 +55,7 @@ spec:
           nfs:
             server: 192.168.0.55
             path: /mnt/kpfromer-22TB-Z2/kpfromer/
-        mountPath: /media
+        mountPath: /media/Photos/originals
     resources:
       requests:
         memory: 1000Mi
