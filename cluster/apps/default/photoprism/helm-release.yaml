@@ -21,6 +21,7 @@ spec:
       tag: "20220121"
     env:
       TZ: "America/Denver"
+      PHOTOPRISM_ADMIN_PASSWORD: ${SECRET_PASSWORD}
     ingress:
       main:
         enabled: true
