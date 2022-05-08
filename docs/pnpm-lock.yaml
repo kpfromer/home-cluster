@@ -3,7 +3,7 @@ lockfileVersion: 5.3
 specifiers:
   '@docusaurus/core': 2.0.0-beta.8
   '@docusaurus/preset-classic': 2.0.0-beta.9
-  '@mdx-js/react': ^1.6.21
+  '@mdx-js/react': ^2.0.0
   '@svgr/webpack': ^5.5.0
   clsx: ^1.1.1
   file-loader: ^6.2.0
@@ -15,7 +15,7 @@ specifiers:
 dependencies:
   '@docusaurus/core': 2.0.0-beta.8_react-dom@17.0.2+react@17.0.2
   '@docusaurus/preset-classic': 2.0.0-beta.9_cf03b7458ee8070c9e09362c20b6f0a1
-  '@mdx-js/react': 1.6.22_react@17.0.2
+  '@mdx-js/react': 2.0.0_react@17.0.2
   '@svgr/webpack': 5.5.0
   clsx: 1.1.1
   file-loader: 6.2.0
@@ -2455,6 +2455,16 @@ packages:
       react: 17.0.2
     dev: false
 
+  /@mdx-js/react/2.0.0_react@17.0.2:
+    resolution: {integrity: sha512-icpMd43xqORnHSVRwALZv3ELN3IS7VS3BL+FyH2FFergQPSQ21FX0lN+OMIs0X+3dGY1L0DLhBCkMfPO+yDG7Q==}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@types/mdx': 2.0.1
+      '@types/react': 17.0.33
+      react: 17.0.2
+    dev: false
+
   /@mdx-js/runtime/1.6.22_react@17.0.2:
     resolution: {integrity: sha512-p17spaO2+55VLCuxXA3LVHC4phRx60NR2XMdZ+qgVU1lKvEX4y88dmFNOzGDCPLJ03IZyKrJ/rPWWRiBrd9JrQ==}
     engines: {node: '>=8'}
@@ -2701,6 +2711,10 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: false
+
+  /@types/mdx/2.0.1:
+    resolution: {integrity: sha512-JPEv4iAl0I+o7g8yVWDwk30es8mfVrjkvh5UeVR2sYPpZCK44vrAPsbJpIS+rJAUxLgaSAMKTEH5Vn5qd9XsrQ==}
     dev: false
 
   /@types/minimatch/3.0.5:
